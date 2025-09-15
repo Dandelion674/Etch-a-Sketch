@@ -28,4 +28,25 @@ function createGrid(size) {
     }
 }
 
+//Grid Resize Func
+function createNewGrid() {
+    let gridSize = prompt('Enter the number of squares(maximum 100):');
+    
+    gridSize = parseInt(gridSize);
+    
+    if (isNaN(gridSize) || gridSize < 1) {
+        alert('Please enter a valid positive number.');
+        return;
+    }
+    
+    if (gridSize > 100) {
+        alert('Maximum grid size is 100. Setting grid size to 100.');
+        gridSize = 100;
+    }
+    
+    createGrid(gridSize);
+}
+
+newGridBtn.addEventListener('click', createNewGrid);
+
 createGrid(16);
